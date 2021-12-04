@@ -12,7 +12,11 @@ export class ParkingService {
     tipo: "",
     placa: "",
     entrada: new Date,
-    salida: new Date
+    salida: new Date,
+    duracion: new Number,
+    tarifa: new Number,
+    total: new Number,
+    vigilante: new String,
   }
   parking!: Parking[];
 
@@ -27,9 +31,16 @@ export class ParkingService {
 
   }
 
+  editParking(parking: Parking): any{
+    const data ={
+      placa: parking.placa,
+      salida:parking.salida
+    }
+    return this.http.post(this.URL_API+"/update", data);
+  }
+
   deleteParking(_id: string) {
     return this.http.delete(`${this.URL_API}/${_id}`);
-
   }
 
 }

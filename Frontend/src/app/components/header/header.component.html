@@ -1,0 +1,32 @@
+<mat-toolbar color="primary">
+  <span>
+    <a routerLink="/">Parking4</a>
+  </span>
+  <span class="spacer"></span>
+  <div class="d-flex flex-row-reverse bd-highlight">
+    <a class="p-2 bd-highlight" mat-button>{{ username }}</a>
+    <a class="p-2 bd-highlight" mat-button *ngIf="isLogin === false" (click)="onLogout()">
+      Logout
+    </a>
+    <a class="p-2 bd-highlight"
+          routerLink="/list"
+          routerLinkActive="mat-accent"
+          *ngIf="isLogin === false" >Listar</a>
+    <a class="p-2 bd-highlight"
+          routerLink="/add"
+          routerLinkActive="mat-accent"
+          *ngIf="isLogin === false" >Servicio</a>
+    <a class="p-2 bd-highlight"
+          routerLink="/config"
+          routerLinkActive="mat-accent"
+          *ngIf="isLogin === false" >Configurar</a>
+    <a class="p-2 bd-highlight"
+          routerLink="/login"
+          routerLinkActive="mat-accent"
+          *ngIf="isLogin === false" >Login</a>
+    <a class="p-2 bd-highlight"
+          routerLink="/signup"
+          routerLinkActive="mat-accent"
+          *ngIf="isLogin === false" >Registro</a>
+  </div>
+</mat-toolbar>

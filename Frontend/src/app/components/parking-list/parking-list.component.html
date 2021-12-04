@@ -1,0 +1,28 @@
+
+<table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Tipo vehículo</th>
+        <th>Placa</th>
+        <th>Entrada</th>
+        <th>Salida</th>
+        <th>Duracion[min]</th>
+        <th>Tarifa</th>
+        <th>Total</th>
+        <th>Vigilante</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let parking of parkingService.parking">
+        <td>{{ parking.tipo }}</td>
+        <td>{{ parking.placa }}</td>
+        <td>{{ parking.entrada }}</td>
+        <td>{{ parking.salida }}</td>
+        <td>{{ getDuracion(parking.entrada,parking.salida)}}</td>
+        <td>{{ getTarifa(parking.tipo) }}</td>
+        <td>{{ getMoneda(getTarifa(parking.tipo)*getDuracion(parking.entrada,parking.salida))}}</td>
+        <td>{{ parking.vigilante }}</td>
+      </tr>
+    </tbody>
+  </table>
+

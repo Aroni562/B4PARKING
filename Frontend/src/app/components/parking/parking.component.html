@@ -2,7 +2,7 @@
   <div class="col-md-4">
       <div class="card-body">
         <form #parkingForm="ngForm" (ngSubmit)="addParking(parkingForm)">
-
+          <h1 align="center">Iniciar servicio</h1>
           <div class="form-group">
             <input
               type="text"
@@ -12,7 +12,7 @@
               [(ngModel)]="parkingService.selectedParking.placa"
             />
           </div>
-
+          <hr>
           <div class="form-group">
               <fieldset>
                 <legend>Tipo de Vehículo</legend>
@@ -38,23 +38,33 @@
 
           <hr>
 
-          <button class="btn btn-primary">
-            Save
+          <button class="btn btn-success">
+            Ingreso
           </button>
 
         </form>
 
         <form>
           <hr>
-
+          <h1 align="center">Terminar servicio</h1>
+          <div class="form-group">
+            <input
+              type="text"
+              name="placa"
+              class="form-control"
+              placeholder="Ingrese la placa"
+              [(ngModel)]="parkingService.selectedParking.placa"
+            />
+          </div>
+          <hr>
           <div class="form-group">
             <legend>Hora de salida</legend>
             <input type="datetime-local" name="salida" [(ngModel)]="parkingService.selectedParking.salida">
           </div>
           <hr>
 
-          <button class="btn btn-danger">
-            Terminar Servicio
+          <button class="btn btn-primary" (click)="editParking();">
+            Salida
           </button>
         </form>
 
@@ -76,20 +86,11 @@
               <td>{{ parking.placa }}</td>
               <td>{{ parking.entrada }}</td>
               <td>{{ parking.salida }}</td>
-              <td>
-
-                <button
-                class="btn btn-danger btn -sm" (click)="editParking(parking)" > salida
-                </button>
-
-              </td>
-
+              <!-- <td>
+                <button class="btn btn-danger" (click)="deleteParking(parking.placa)">Eliminar</button>
+              </td> -->
             </tr>
-
-
           </tbody>
         </table>
-
-
   </div>
 </div>

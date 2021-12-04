@@ -26,6 +26,15 @@ parkingCtrl.editParking = async (req, res) => {
     res.json({status: "Parking Updated"})
 };
 
+parkingCtrl.updateSalida = async (req, res) => {
+    var placa = req.body.placa;
+    var horaSalida= req.body.salida;
+
+    var parking = await Parking.find({placa:placa, salida: null})
+    parking[0].salida = horaSalida;
+    parking[0].save();
+    res.json({status: "Parking Updated"})
+};
 parkingCtrl.deleteParking = async (req, res) => {
     await Parking.findByIdAndDelete(req.params.id)
     res.json({status: "Parking Deleted"})

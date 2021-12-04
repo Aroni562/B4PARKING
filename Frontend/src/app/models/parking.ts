@@ -6,5 +6,10 @@ export interface Parking {
   salida: Date
   _id?: String
   createdAt?: Date
-    updatedAt?: Date
+  updatedAt?: Date
+  duracion: Number
+  tarifa: Number
+  total: Number
+  vigilante: String
+
 }

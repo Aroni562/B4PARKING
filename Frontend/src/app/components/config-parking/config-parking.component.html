@@ -1,0 +1,50 @@
+<div class="row">
+  <div class="col-md-4">
+      <div class="card-body" align="center">
+        <form #configForm='ngForm' (submit)='addConfig(configForm)'>
+          <mat-form-field appearance="fill">
+            <mat-label>Tarifa para carro [$/min]</mat-label>
+            <input type="int" matInput tar_car='ngModel'>
+          </mat-form-field>
+
+          <mat-form-field appearance="fill">
+            <mat-label>Tarifa para moto [$/min]</mat-label>
+            <input type="int" matInput tar_mot='ngModel'>
+          </mat-form-field>
+
+          <mat-form-field appearance="fill">
+            <mat-label>Cantidad de plazas para carro</mat-label>
+            <input type="int" matInput pla_car='ngModel'>
+          </mat-form-field>
+
+          <mat-form-field appearance="fill">
+            <mat-label>Cantidad de plazas para moto</mat-label>
+            <input type="int" matInput pla_mot='ngModel'>
+          </mat-form-field>
+        <div>
+          <button class="btn btn-success">Guardar</button>
+        </div>
+        </form>
+      </div>
+  </div>
+  <div class="col-md-8">
+      <table class="table table-striped">
+          <thead>
+            <tr>
+              <th>Tarifa de carro</th>
+              <th>Tarifa de moto</th>
+              <th>Plazas de carro</th>
+              <th>Plazas de moto</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>{{ tarifa_carro }}</td>
+              <td>{{ tarifa_moto }}</td>
+              <td>{{ plazas_carro }}</td>
+              <td>{{ plazas_moto }}</td>
+            </tr>
+          </tbody>
+        </table>
+  </div>
+</div>

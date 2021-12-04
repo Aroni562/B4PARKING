@@ -7,6 +7,7 @@ router.get("/", parkingCtrl.getParkings);
 router.post("/", parkingCtrl.createParking);
 router.get("/:id", parkingCtrl.getParking);
 router.put("/:id", parkingCtrl.editParking);
+router.post("/update", parkingCtrl.updateSalida);
 router.delete("/:id", parkingCtrl.deleteParking);
 
 module.exports = router
